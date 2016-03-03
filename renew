@@ -4,8 +4,8 @@ web_service='nginx'
 le_path='/opt/letsencrypt'
 le_conf='/etc/letsencrypt'
 exp_limit=10;
-ERROR='\033[0;31m[ERROR]\033[0m'
-
+ESCAPE=$'\e'
+ERROR="${ESCAPE}[0;31m[ERROR]${ESCAPE}[0m"
 
 get_domain_list(){
         certdomain=$1
