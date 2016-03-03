@@ -1,0 +1,2 @@
+ echo -n | openssl s_client -servername www.oceandns.net -connect www.oceandns.net:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > cert.pem
+ tlsagen
