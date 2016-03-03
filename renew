@@ -1,9 +1,11 @@
 #!/bin/bash
 domain=$1
+web_service='nginx'
 le_path='/opt/letsencrypt'
 le_conf='/etc/letsencrypt'
 exp_limit=10;
 ERROR='\033[0;31m[ERROR]\033[0m'
+
 
 get_domain_list(){
         certdomain=$1
@@ -49,8 +51,8 @@ else
 	echo "The certificate for \"$domain\" is about to expire soon. Starting renewal request..."
 	domain_list=$( get_domain_list $domain )
 	"$le_path"/letsencrypt-auto certonly --renew-by-default --domains "${domain_list}"
-	echo "Restarting (reloading) nginx..."
-	/usr/sbin/service nginx reload
+	echo "Reloading $WEB_SERVICE..."
+	/usr/sbin/service $WEB_SERVICE reload
 	echo "Renewal process finished for domain \"$domain\""
 	exit 0;
 fi
