@@ -1,2 +1,2 @@
 # letsencrypt
-Random Scripts for Encryption
+Tiny scripts for Let's Encrypt to automate deploy and renewal
