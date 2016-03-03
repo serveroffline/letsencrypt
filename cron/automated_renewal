@@ -1,0 +1,11 @@
+#!/bin/bash
+le_conf='/etc/letsencrypt'
+le_path='/opt/letsencrypt'
+cd ${le_conf}/renewal
+FILES='*.conf'
+for f in $FILES
+do
+  # echo "Processing ${f} file..."
+  # take action on each file. $f store current file name
+  /opt/letsencrypt/renew ${f%.conf} > /dev/null 2>1
+done
