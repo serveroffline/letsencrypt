@@ -1,6 +1,9 @@
 # letsencrypt
 Tiny scripts for Let's Encrypt to automate deploy and renewal
 
+# Warning
+This repository is here for historic purposes. The new auto-bot has all this functionality built in. This script was used prior to 1st of august.
+
 Just make a cron-job as a user with enough rights to deploy and run let's encrypt plus the ability to reload the NGINX config (or whichever you want to use, I simply used NGINX in this one but it can be any...)
 
 0 0 * * * /opt/letsencrypt/cron/automated_renewal
